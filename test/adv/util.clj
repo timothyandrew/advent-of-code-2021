@@ -11,3 +11,6 @@
 
 (defn ->int [n]
   (Integer/parseInt n))
+
+(defn safe-inc [n]
+  (inc (or n 0)))
