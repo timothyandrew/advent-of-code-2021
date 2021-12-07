@@ -14,3 +14,6 @@
 
 (defn safe-inc [n]
   (inc (or n 0)))
+
+(defn pmap-indexed [f coll]
+  (pmap (fn [[a b]] (f a b)) (partition 2 (interleave (iterate inc 0) coll))))
