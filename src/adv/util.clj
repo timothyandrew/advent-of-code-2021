@@ -17,3 +17,6 @@
 
 (defn pmap-indexed [f coll]
   (pmap (fn [[a b]] (f a b)) (partition 2 (interleave (iterate inc 0) coll))))
+
+(defn mmap [f coll]
+  (map #(map f %) coll))
